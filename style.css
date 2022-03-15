@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+}
+body {
+  background-color: #242325;
+}
+li {
+  list-style-type: none;
+}
+header {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.quizes {
+  width: 100%;
+}
+
+.quiz {
+  width: 80%;
+  margin: 3rem auto;
+}
+
+.choices h1 i {
+  font-size: 10px;
+  color: red;
+}
+
+.choices li {
+  border: solid 1px rgb(148, 148, 148);
+  border-radius: 20px;
+  margin: 1rem 0;
+  padding: 10px;
+}
+.choices li:hover {
+  cursor: pointer;
+}
+.choices.stopChoosing {
+  pointer-events: none;
+}
+.submit {
+  text-align: center;
+  width: 100%;
+  background-color: green;
+  border-radius: 15px;
+  padding: 10px;
+  margin-top: 3rem;
+}
+.submit:hover {
+  cursor: pointer;
+}
+
+.tryagain {
+  text-align: center;
+  font-size: 1.7rem;
+  width: 100%;
+  background-color: #093bbd;
+  border-radius: 15px;
+  padding: 10px;
+  margin: 2rem 0;
+  display: none;
+}
+.tryagain:hover {
+  cursor: pointer;
+}
+.tryagain.show {
+  animation: showup 1s ease;
+  display: block;
+}
+
+@keyframes showup {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.selected {
+  background-color: #898989a6;
+}
+.correct {
+  background-color: #007600;
+}
+.incorrect {
+  background-color: #c10202;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+}
+.title i {
+  color: red;
+  font-size: 40px;
+  margin-left: 2rem;
+  display: none;
+}
+.score {
+  display: none;
+  font-size: 2.5rem;
+  padding: 20px 5px;
+  background-color: #61c13b78;
+  margin: 1.5rem 0;
+}
+
+.title i.notfound {
+  display: block;
+  animation: cligne infinite 1.25s ease-in-out;
+}
+@keyframes cligne {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
