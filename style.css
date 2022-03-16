@@ -41,6 +41,7 @@ header h1::before {
   background-color: rgb(56, 42, 75);
   padding: 1rem 0.5rem;
   border-radius: 5px;
+  box-shadow: 0 3px 9px -7px #f5f4ff;
 }
 
 .choices h1 i {
