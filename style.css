@@ -118,6 +118,10 @@ header h1::before {
   background-color: #e90000;
   color: #eee;
 }
+.choices li.correctanswer {
+  background-color: #4bbf89ba;
+  color: black;
+}
 
 .title {
   display: flex;

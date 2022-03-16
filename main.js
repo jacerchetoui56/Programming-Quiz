@@ -26,7 +26,10 @@ submit.addEventListener('click',()=>{
     for(let i=0;i<quiz.length;i++){
         const choix = quiz[i].querySelectorAll("li")
         if(selected(i,choix)!=-1 && answers[i]==selected(i,choix)) {choix[selected(i,choix)].classList.add("correct"); correct++}
-        else if(selected(i,choix)!=-1) choix[selected(i,choix)].classList.add("incorrect")
+        else if(selected(i,choix)!=-1) {
+            choix[selected(i,choix)].classList.add("incorrect")
+            choix[answers[i]].classList.add("correctanswer")
+        }
         else {
             exlamation[i].classList.add("notfound")   
         }
@@ -36,7 +39,6 @@ submit.addEventListener('click',()=>{
     scoretext.textContent = `${correct}`
     score.style.display = 'block'
     quiz.forEach((q)=>{q.classList.add("stopChoosing")})
-
 })
 
 function selected(i,list){
