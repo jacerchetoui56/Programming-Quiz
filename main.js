@@ -1,6 +1,6 @@
 const quiz = document.querySelectorAll(".choices")
 const submit = document.querySelector(".submit")
-const answers = [0,0,2,1,1,2,0]
+const answers = [2,1,1,1,2,2,1]
 const exlamation = document.querySelectorAll(".title i")
 const tryAgain = document.querySelector(".tryagain")
 const score = document.querySelector(".score")
@@ -8,13 +8,6 @@ const scoretext = document.querySelector(".score span")
 
 
 let correct=0;
-
-console.log(quiz)
-// choices.forEach((choice)=>{
-//     choice.addEventListener('click',()=>{
-//         choice.classList.toggle("selected")
-//     })
-// })
 
 for(let k=0;k<quiz.length;k++){
    const choix = quiz[k].querySelectorAll("li")
@@ -32,11 +25,10 @@ submit.addEventListener('click',()=>{
     window.scrollTo({top:0 })
     for(let i=0;i<quiz.length;i++){
         const choix = quiz[i].querySelectorAll("li")
-        if(selected(i,choix)!=-1 && i==selected(i,choix)) {console.log("bnla");choix[i].classList.add("correct"); correct++}
+        if(selected(i,choix)!=-1 && answers[i]==selected(i,choix)) {choix[selected(i,choix)].classList.add("correct"); correct++}
         else if(selected(i,choix)!=-1) choix[selected(i,choix)].classList.add("incorrect")
         else {
-            exlamation[i].classList.add("notfound")
-            
+            exlamation[i].classList.add("notfound")   
         }
     }
     tryAgain.classList.add("show")
@@ -53,6 +45,7 @@ function selected(i,list){
     }
     return -1
 }
+
 tryAgain.addEventListener('click',()=>{
     location.reload()
     window.scrollTo({top:0 })
