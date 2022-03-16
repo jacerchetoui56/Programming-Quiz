@@ -1,6 +1,6 @@
 const quiz = document.querySelectorAll(".choices")
 const submit = document.querySelector(".submit")
-const answers = [1,0,2,1,1,2,0]
+const answers = [0,0,2,1,1,2,0]
 const exlamation = document.querySelectorAll(".title i")
 const tryAgain = document.querySelector(".tryagain")
 const score = document.querySelector(".score")
@@ -32,7 +32,7 @@ submit.addEventListener('click',()=>{
     window.scrollTo({top:0 })
     for(let i=0;i<quiz.length;i++){
         const choix = quiz[i].querySelectorAll("li")
-        if(selected(i,choix)!=-1 && i==selected(i,choix)) {choix[i].classList.add("correct"); correct++}
+        if(selected(i,choix)!=-1 && i==selected(i,choix)) {console.log("bnla");choix[i].classList.add("correct"); correct++}
         else if(selected(i,choix)!=-1) choix[selected(i,choix)].classList.add("incorrect")
         else {
             exlamation[i].classList.add("notfound")
@@ -41,7 +41,7 @@ submit.addEventListener('click',()=>{
     }
     tryAgain.classList.add("show")
     submit.style.display = 'none'
-    scoretext.textContent = `${correct} / ${quiz.length}`
+    scoretext.textContent = `${correct}`
     score.style.display = 'block'
     quiz.forEach((q)=>{q.classList.add("stopChoosing")})
 
